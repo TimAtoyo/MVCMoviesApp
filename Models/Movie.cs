@@ -22,12 +22,12 @@ public class Movie
     public decimal Price { get; set; }
 
     [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
-    [Required]
+    [Required(ErrorMessage = "Must only use letters, The first letter is required to be uppercase. Special characters are not allowed")]
     [StringLength(30)]
     public string? Genre { get; set; }
 
     [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
     [StringLength(5)]
-    [Required]
+    [Required(ErrorMessage = "first character needs be an uppercase letter")]
     public string? Rating { get; set; }
 }
